@@ -1,7 +1,7 @@
 import { AtSign, Plus, X } from "lucide-react";
 import { FormEvent } from "react";
 import { Button } from "../../components/button";
-import { Modal } from "../../components/modal";
+import { Modal } from "../../components/modal-components/modal";
 import { HeaderModal } from "../../components/modal-components/modal-header";
 import { Input } from "../../components/input";
 

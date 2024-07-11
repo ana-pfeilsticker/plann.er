@@ -1,6 +1,6 @@
-import { Calendar, Clock, Mail, Tag } from "lucide-react";
+import { Calendar, Clock, Tag } from "lucide-react";
 import { Button } from "../../components/button";
-import { Modal } from "../../components/modal";
+import { Modal } from "../../components/modal-components/modal";
 import { HeaderModal } from "../../components/modal-components/modal-header";
 import { Input } from "../../components/input";
 

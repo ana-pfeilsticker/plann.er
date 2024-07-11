@@ -1,7 +1,7 @@
 import { Mail, User, X } from "lucide-react";
 import { Button } from "../../components/button";
 import { useNavigate } from "react-router-dom";
-import { Modal } from "../../components/modal";
+import { Modal } from "../../components/modal-components/modal";
 import { HeaderModal } from "../../components/modal-components/modal-header";
 import { Input } from "../../components/input";
 

@@ -11,13 +11,20 @@ import {
 import { Button } from "../../components/button";
 import { useState } from "react";
 import { CreateActivityModal } from "./create-new-activity-modal";
+import { CreateNewLinkModal } from "./create-new-link-modal";
 
 export function TripDetails() {
 	const [isCreateActivityModalOpen, setIsCreateActivityModalOpen] =
 		useState(false);
 
+	const [isCreateLinkModalOpen, setIsCreateLinkModalOpen] = useState(false);
+
 	function changeIsCreateActivityModalOpen() {
 		setIsCreateActivityModalOpen(!isCreateActivityModalOpen);
+	}
+
+	function changeIsCreateLinkModalOpen() {
+		setIsCreateLinkModalOpen(!isCreateLinkModalOpen);
 	}
 	return (
 		<div className="h-screen flex items-center justify-center">
@@ -122,14 +129,18 @@ export function TripDetails() {
 									</h3>
 									<a
 										className="text-zinc-400 text-xs hover:text-zinc-300"
-										href="#"
+										href="https://www.airbnb.com.br/rooms/104700011"
 									>
 										https://www.airbnb.com.br/rooms/104700011gdfsjhgdfasgasdfhjkgjasdfgjasdfgasdfhjg
 									</a>
 								</div>
 								<Link2 className="size-5 text-zinc-400" />
 							</div>
-							<Button color="secondary" size="full">
+							<Button
+								onClick={changeIsCreateLinkModalOpen}
+								color="secondary"
+								size="full"
+							>
 								<Plus className="size-5 text-zinc-200" />
 								Cadastrar novo link
 							</Button>
@@ -152,12 +163,9 @@ export function TripDetails() {
 							<div className="flex justify-between gap-4 items-center">
 								<div className="space-y-1.5 truncate flex-1">
 									<h3 className="text-base text-zinc-100">Dr. Rita Pacocha</h3>
-									<a
-										className="text-zinc-400 text-xs hover:text-zinc-300"
-										href="#"
-									>
+									<p className="text-zinc-400 text-xs hover:text-zinc-300">
 										lacy.stiedemann@gmail.com
-									</a>
+									</p>
 								</div>
 								<CircleCheck className="size-5 text-lime-300" />
 							</div>
@@ -173,6 +181,12 @@ export function TripDetails() {
 			{isCreateActivityModalOpen && (
 				<CreateActivityModal
 					changeIsCreateActivityModalOpen={changeIsCreateActivityModalOpen}
+				/>
+			)}
+
+			{isCreateLinkModalOpen && (
+				<CreateNewLinkModal
+					changeIsCreateLinkModalOpen={changeIsCreateLinkModalOpen}
 				/>
 			)}
 		</div>
