@@ -11,7 +11,7 @@ export function AddPeopleInput({
 	openGuestModal,
 	guestsEmailList,
 	changeIsConfirmTripModalOpen,
-}: AddPeopleInputProps) {
+}: Readonly<AddPeopleInputProps>) {
 	return (
 		<div className="bg-zinc-900 px-4 h-16  w-full rounded-xl flex justify-between shadow-shape items-center">
 			<button

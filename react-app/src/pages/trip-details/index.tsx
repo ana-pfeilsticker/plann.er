@@ -9,8 +9,16 @@ import {
 	UserCog,
 } from "lucide-react";
 import { Button } from "../../components/button";
+import { useState } from "react";
+import { CreateActivityModal } from "./create-new-activity-modal";
 
 export function TripDetails() {
+	const [isCreateActivityModalOpen, setIsCreateActivityModalOpen] =
+		useState(false);
+
+	function changeIsCreateActivityModalOpen() {
+		setIsCreateActivityModalOpen(!isCreateActivityModalOpen);
+	}
 	return (
 		<div className="h-screen flex items-center justify-center">
 			<div className="max-w-6xl py-10 w-full h-screen space-y-8">
@@ -35,7 +43,11 @@ export function TripDetails() {
 					<div className="flex flex-col gap-6 flex-1">
 						<div className="flex w-full justify-between">
 							<h1 className="text-zinc-50 text-3xl font-medium">Atividades</h1>
-							<Button color="primary" size="normal">
+							<Button
+								onClick={changeIsCreateActivityModalOpen}
+								color="primary"
+								size="normal"
+							>
 								<Plus className="size-5 text-lime-950" />
 								Cadastrar Atividade
 							</Button>
@@ -157,6 +169,12 @@ export function TripDetails() {
 					</div>
 				</div>
 			</div>
+
+			{isCreateActivityModalOpen && (
+				<CreateActivityModal
+					changeIsCreateActivityModalOpen={changeIsCreateActivityModalOpen}
+				/>
+			)}
 		</div>
 	);
 }
