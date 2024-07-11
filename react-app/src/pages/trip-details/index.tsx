@@ -115,7 +115,7 @@ export function TripDetails() {
 									</h3>
 									<a
 										className="text-zinc-400 text-xs hover:text-zinc-300"
-										href="#"
+										href="https://www.airbnb.com.br/rooms/104700011cd .."
 									>
 										https://www.airbnb.com.br/rooms/104700011gdfsjhgdfasgasdfhjkgjasdfgjasdfgasdfhjg
 									</a>
