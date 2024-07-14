@@ -1,5 +1,6 @@
 import {
 	Calendar,
+	Check,
 	CircleCheck,
 	CircleDashed,
 	Link2,
@@ -12,6 +13,8 @@ import { Button } from "../../components/button";
 import { useState } from "react";
 import { CreateActivityModal } from "./create-new-activity-modal";
 import { CreateNewLinkModal } from "./create-new-link-modal";
+import { CheckInput } from "../../components/check";
+import { TripActivity } from "./trip-activity";
 
 export function TripDetails() {
 	const [isCreateActivityModalOpen, setIsCreateActivityModalOpen] =
@@ -74,32 +77,33 @@ export function TripDetails() {
 									<span className=" text-xl text-zinc-300">Dia 18</span>
 									<span className="text-xs text-zinc-500">Domingo</span>
 								</div>
-								<div className="bg-zinc-900 shadow-shape px-4 h-10 rounded-xl flex items-center gap-3 ">
-									<CircleCheck className="size-5 text-lime-300" />
-									<span className="flex flex-1">Corrida de Kart</span>
-									<span className="m-auto text-zinc-400">14:00h</span>
-								</div>
+								<TripActivity
+									isChecked={false}
+									activityText="Passear com os cachorros"
+									activityTime="15:00h"
+								/>
 							</div>
 							<div className="flex flex-col gap-3">
-								<div className="flex gap-2 items-end">
-									<span className=" text-xl text-zinc-300">Dia 19</span>
-									<span className="text-xs text-zinc-500">Segunda-feira</span>
-								</div>
-								<div className="bg-zinc-900 shadow-shape px-4 h-10 rounded-xl flex items-center gap-3 ">
-									<CircleCheck className="size-5 text-lime-300" />
-									<span className="flex flex-1">Corrida de Kart</span>
-									<span className="m-auto text-zinc-400">14:00h</span>
-								</div>
-								<div className="bg-zinc-900 shadow-shape px-4 h-10 rounded-xl flex items-center gap-3 ">
-									<CircleCheck className="size-5 text-lime-300" />
-									<span className="flex flex-1">Corrida de Kart</span>
-									<span className="m-auto text-zinc-400">14:00h</span>
-								</div>
-								<div className="bg-zinc-900 shadow-shape px-4 h-10 rounded-xl flex items-center gap-3 ">
-									<CircleDashed className="size-5 text-zinc-400" />
-									<span className="flex flex-1">Corrida de Kart</span>
-									<span className="m-auto text-zinc-400">14:00h</span>
-								</div>
+								<TripActivity
+									isChecked={false}
+									activityText="Passear com os cachorros"
+									activityTime="15:00h"
+								/>
+								<TripActivity
+									isChecked={false}
+									activityText="Passear com os cachorros"
+									activityTime="15:00h"
+								/>
+								<TripActivity
+									isChecked={false}
+									activityText="Passear com os cachorros"
+									activityTime="15:00h"
+								/>
+								<TripActivity
+									isChecked={false}
+									activityText="Passear com os cachorros"
+									activityTime="15:00h"
+								/>
 							</div>
 						</div>
 					</div>
@@ -158,7 +162,7 @@ export function TripDetails() {
 										jessica.white44@yahoo.com
 									</a>
 								</div>
-								<CircleDashed className="size-5 text-zinc-400" />
+								<CheckInput checked={false} />
 							</div>
 							<div className="flex justify-between gap-4 items-center">
 								<div className="space-y-1.5 truncate flex-1">
@@ -167,7 +171,7 @@ export function TripDetails() {
 										lacy.stiedemann@gmail.com
 									</p>
 								</div>
-								<CircleCheck className="size-5 text-lime-300" />
+								<CheckInput checked={true} />
 							</div>
 							<Button color="secondary" size="full">
 								<UserCog className="size-5 text-zinc-200" />
